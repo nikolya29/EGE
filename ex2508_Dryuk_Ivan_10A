@@ -1,0 +1,23 @@
+File = open("ex2508.txt")
+s=list(File.readline())
+k=0
+arrayK=[]
+arrayC=[]
+alph=[]
+#Генерация англ алфавита
+for b in range (65,91):
+    alph.append(chr(b))
+for i in alph:
+    for j in s:
+        if j==i:
+            k+=1
+        else:
+            arrayK.append(k)
+            arrayC.append(i)
+            k=0
+maxx=max(arrayK)
+n=0
+for g in arrayK:
+    n+=1
+    if int(g)==maxx:
+        print(arrayC[n],maxx)
