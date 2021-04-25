@@ -1,0 +1,20 @@
+#Генерация англ алфавита
+alphabets_in_capital=[]
+for i in range(65,91):
+    alphabets_in_capital.append(chr(i))
+F=open('ex2507.txt')
+s=list(F.readline())
+arrayK=[]
+arrayC=[]
+d=''
+k=0
+for i in alphabets_in_capital:
+    for j in s:
+        if j==i:
+            k+=1
+        elif j!=i:
+            arrayK.append(k)
+            arrayC.append(i)
+            k = 0
+index=arrayK.index(max(arrayK))
+print(arrayC[index],max(arrayK))
